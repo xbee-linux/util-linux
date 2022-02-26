@@ -140,8 +140,7 @@ provision:
 build:
   - shell:
       cmds:
-        - ./autogen.sh
-        - ./configure --prefix=/usr
+        - ./configure --libdir=/usr/lib --sbindir=/usr/sbin --bindir=/usr/bin --prefix=/usr
         - make
         - make install DESTDIR={% xbeeOut %}
       directory: "{% xbeeSrc %}/util-linux-{% version %}"
