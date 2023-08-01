@@ -129,19 +129,19 @@ dependencies:
   - m4
   - pkg-config
 
-in:
+var:
   version: 2.37.2
 
 provision:
   - url:
-      from: https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-{% version %}.tar.xz
-      todir: "{% xbeeSrc %}"
+      from: https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-{{ .version }}.tar.xz
+      todir: "{{ .xbee.src }}"
 
 build:
   - shell:
       cmds:
         - ./configure --libdir=/usr/lib --sbindir=/usr/sbin --bindir=/usr/bin --prefix=/usr
         - make
-        - make install DESTDIR={% xbeeOut %}
-      directory: "{% xbeeSrc %}/util-linux-{% version %}"
+        - make install DESTDIR={{ .xbee.out }}
+      directory: "{{ .xbee.src }}/util-linux-{{ .version }}"
 
