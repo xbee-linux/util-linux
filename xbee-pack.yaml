@@ -120,7 +120,7 @@ description: |
     libsmartcols: Contains routines for aiding screen output in tabular form
     libuuid: Contains routines for generating unique identifiers for objects that may be accessible beyond the local system
 
-dependencies:
+builders:
   - automake
   - autoconf
   - bison
