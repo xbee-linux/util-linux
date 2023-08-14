@@ -133,9 +133,7 @@ var:
   version: 2.37.2
 
 provision:
-  - url:
-      from: https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-{{ .version }}.tar.xz
-      todir: "{{ .xbee.src }}"
+  url: https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-{{ .version }}.tar.xz
 
 build:
   - shell:
