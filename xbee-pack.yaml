@@ -130,10 +130,11 @@ builders:
   - pkg-config
 
 var:
-  version: 2.37.2
+  xbee:
+    version: 2.37.2
 
 provision:
-  url: https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-{{ .version }}.tar.xz
+  url: https://www.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-{{ .xbee.version }}.tar.xz
 
 build:
   - shell:
@@ -141,5 +142,5 @@ build:
         - ./configure --libdir=/usr/lib --sbindir=/usr/sbin --bindir=/usr/bin --prefix=/usr
         - make
         - make install DESTDIR={{ .xbee.out }}
-      directory: "{{ .xbee.src }}/util-linux-{{ .version }}"
+      directory: "{{ .xbee.src }}/util-linux-{{ .xbee.version }}"
 
